@@ -1,0 +1,94 @@
+
+.header__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+padding-top: 15px;
+padding-bottom: 15px;
+background-color: rgb(255, 255, 255);
+
+    &__logo {
+      width: 150px;
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 45px;
+      margin-left: 130px;
+      display: none;
+
+      @media screen and (min-width:1280px) {
+        display: flex;
+      }
+    }
+
+    &__links {
+      color: #ff5000;
+      
+    }
+
+    &__wrap {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+
+
+    &__button {
+      background-color: transparent;
+      color: #ff5000;
+      border: none;
+      font-weight: 700;
+      display: none;
+
+      @media screen and (min-width:1280px) {
+        display: block;
+      }
+    }
+
+    &__text {
+      margin-left: 60px;
+    }
+
+    &__but {
+      width: 122px;
+      font-size: 14px;
+      padding: 10px 20px;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    background-color: #ff5000;
+    -webkit-border-radius: 80px;
+    border-radius: 80px;
+    line-height: 24px;
+    color: #fff;
+    font-weight: 700;
+    outline: 0;
+    border: 2px solid #ff5000;
+    display: none;
+
+      @media screen and (min-width:1280px) {
+        display: block;
+      }
+    }
+    
+    &__buttons {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        display: block;
+
+      @media screen and (min-width:768px) {
+        display: flex;
+      }
+
+      @media screen and (min-width:1280px) {
+        display: none;
+      }
+
+    }
+}
