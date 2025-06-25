@@ -275,12 +275,17 @@ body {
   height: 40px;
   width: 100%;
   background: #665cac;
+  transform: scale(1);
+  transition: transform 0.3s ease;
 }
 @media screen and (min-width: 768px) {
   .hero__link {
     width: 210px;
     gap: 19px;
   }
+}
+.hero__link:hover {
+  transform: scale(0.9);
 }
 .hero .hero__list li:last-child .hero__link {
   background: #25a3e1;
