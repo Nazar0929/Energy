@@ -329,6 +329,9 @@ body {
     margin-bottom: 0px;
   }
 }
+.law .law__list .law__item:nth-child(2):hover {
+  margin-top: -10px;
+}
 .law__title {
   margin-top: 15px;
   margin-bottom: 16px;
