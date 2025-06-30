@@ -1,0 +1,237 @@
+.head {
+    background: #1E252B;
+    padding-top: 115px;
+    padding-bottom: 90px;
+
+
+    &__title {
+            color: #ff5000;
+    font-weight: 900;
+    letter-spacing: 2px;
+        font-size: 32px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+
+          @media screen and (min-width:768px) {
+        font-size: 36px;
+        text-align: center;
+      }
+
+            @media screen and (min-width:1280px) {
+        font-size: 48px;
+        text-align: start;
+      }
+
+    }
+
+    &__text {
+        font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: .5px;
+        color: #b9b9b9;
+        font-weight: 900;
+        border: 1px solid #000000;
+        padding: 5px 35px;
+        width: 100%;
+        background-color: #000000;
+
+    @media screen and (min-width:768px) {
+        font-size: 18px;
+        width: 402.5px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      
+            @media screen and (min-width:1280px) {
+        margin-left: 0px;
+        margin-right: 0px;
+        text-align: start;
+      }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+
+        
+    @media screen and (min-width:768px) {
+        justify-content: center;
+      }
+
+      
+    @media screen and (min-width:1280px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+        
+    }
+
+
+@keyframes borderSegment {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  25% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+@keyframes borderLoopHorizontal {
+  0%, 100% {
+    width: 0%;
+    opacity: 0;
+  }
+  50% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes borderLoopVertical {
+  0%, 100% {
+    height: 0%;
+    opacity: 0;
+  }
+  50% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+.head {
+  &__item {
+    position: relative;
+    display: block;
+    padding: 25px 24px;
+    width: 100%;
+    max-width: 570px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 12px;
+    margin-top: 24px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    z-index: 0;
+     transition: transform 0.15s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      background: url(../../img/download.png) center no-repeat;
+      background-size: contain;
+      z-index: 2;
+
+      
+      @media screen and (min-width:768px) {
+      width: 48px;
+      height: 48px;
+      }
+      
+    }
+
+    span.border-helper {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      // создаём 4 псевдоэлемента для каждой стороны рамки
+      &::before, &::after, 
+      /* два дополнительных через вложенность */
+      & > *::before, & > *::after {
+        content: '';
+        position: absolute;
+        background-color: #ff5000;
+      }
+
+      // Левая вертикальная линия
+      &::before {
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        animation: borderLoopVertical 2.5s linear infinite 0s;
+      }
+
+      // Верхняя горизонтальная линия
+      &::after {
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        animation: borderLoopHorizontal 2.5s linear infinite 0.625s;
+      }
+
+      // Правая вертикальная линия (через вложенный span — но у тебя нет вложенных элементов, поэтому сделаем через дополнительный псевдоэлемент)
+      & > span.right-line,
+      & > div.right-line {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background-color: #ff5000;
+        animation: borderLoopVertical 2.5s linear infinite 1.25s;
+        content: '';
+      }
+
+      // Нижняя горизонтальная линия (через дополнительный элемент)
+      & > span.bottom-line,
+      & > div.bottom-line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: #ff5000;
+        animation: borderLoopHorizontal 2.5s linear infinite 1.875s;
+        content: '';
+      }
+    }
+
+    &::before {
+      /* Можно убрать или использовать для дополнительного эффекта */
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #ff5000;
+      opacity: 0.2;
+      z-index: 1;
+    }
+      &:active {
+    transform: scale(0.95);
+  }
+
+      @media screen and (min-width:768px) {
+    font-weight: 700;
+    font-size: 14px;
+      }
+  }
+}
+
+
+}
+
+
