@@ -662,7 +662,7 @@ body {
   transform: translateY(-50%);
   width: 32px;
   height: 32px;
-  background: url(../../img/download.png) center no-repeat;
+  background: url(../img/download.png) center no-repeat;
   background-size: contain;
   z-index: 2;
 }
