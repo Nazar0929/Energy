@@ -50,12 +50,39 @@
         </div>
         <button class="header__button"><p class="header__text">Укр</p></button>
         <div class="header__wrap">
-          <a href="/index.html" class="header__but">Замовити</a>
+          <button type="button" class="header__but" data-modal-open>Замовити</button>
         </div>
-        <button type="button" class="header__buttons">
+        
+        <button type="button" class="header__buttons" data-modal-header-open>
           <img src="./img/menu.png" alt="" />
         </button>
       </div>
+              <div class="menu is-hidden" data-header-modal>
+            <button type="button" class="menu__btn" data-modal-header-close>
+              <img src="./img/iconsclose.png" alt="" class="header__close">
+            </button>
+              <a href="#"
+            ><img src="./img/libim.jpg" alt="" class="header__logos"
+          /></a>
+          
+            <ul>
+              <li class="header__href"><a href="" class="header__hre">Про нас</a></li>
+              <li class="header__href"><a href="" class="header__hre">Продукція</a></li>
+              <li class="header__href"><a href="" class="header__hre">Новини</a></li>
+              <li class="header__href"><a href="" class="header__hre">Доставка Електроенергії</a></li>
+              <li class="header__href"><a href="" class="header__hre">Контакти</a></li>
+            </ul>
+            <div class="header__boxwrap">
+          <ul class="header__lists ">
+            <li class="footer__link"><a href=""><img src="./img/instagra.png" alt="" class="footer__imgs"></a></li>
+            <li class="footer__link"><a href="" ><img src="./img/faceboo.png" alt="" class="footer__imgs"></a></li>
+          </ul>
+          <div>
+            <button type="button" class="header__modal" data-modal-open>Замовити</button>
+        </div>
+        </div>
+
+          </div>
     </header>
     <section class="hero">
       <div class="container">
@@ -201,6 +228,11 @@
         </div>
       </div>
     </section>
+    <section>
+      <div class="container">
+
+      </div>
+    </section>
     <footer class="footer">
       <div class="container">
         <div class="footer__wraps">
@@ -244,7 +276,48 @@
         </div>
       </div>
     </footer>
+        <div class="backdrop is-hidden"  data-modal>
+        <div class="backdrop__modal ">
+          <h2 class="backdrop__title">Залиште свої дані, ми вам передзвонимо</h2>
+          <form  action="https://api.web3forms.com/submit" method="POST" class="backdrop__form">
+
+            <input type="hidden" name="access_key" value="ce1201de-7164-4780-86de-73433d9e954b" class="">
+            <label for="name" class="backdrop__label">Ім'я</label>
+            <div class="backdrop__wrapper">
+            <input type="text" id="name" class="backdrop__input" required>
+            <img src="./img/icons90.png" alt="" class="backdrop__icon">
+
+          </div>
+            <label for="tell" class="backdrop__label">Телефон</label>
+            <div class="backdrop__wrapper">
+            <input type="text" id="tell" class="backdrop__input" required>
+            <img src="./img/iconsphones.png" alt="" class="backdrop__icon">
+
+            </div>
+            <label for="email" class="backdrop__label">Пошта</label>
+            <div class="backdrop__wrapper">
+            <input type="email" id="emaill" class="backdrop__input" required>
+            <img src="./img/iconsmails.png" alt="" class="backdrop__icon">
+
+            </div>
+            <label for="text" class="backdrop__comment">Коментар</label>
+            <textarea name="text" id="text" placeholder="Введіть текст" class="backdrop__text"></textarea>
+            <label class="backdrop__wrapperr">
+              <input type="checkbox"  class="backdrop__box" required>
+              <span class="backdrop__checked">Погоджуюся з розсилкою та приймаю</span>
+              <a href="https://www.facebook.com/"  target="_blank" class="backdrop__links">Умови договору</a>
+            </label>
+            <div class="ds">
+            <button type="submit" class="backdrop__button">Відправити</button>
+            </div>
+          </form>
+          <button type="button" class="backdrop__closee" data-modal-close>
+            <img src="./img/iconsclose.png" alt="" class="backdrop__close">
+          </button>
+        </div>
+      </div>
 
     <script src="./js/scrol.js"></script>
+    <script src="./js/back.js"></script>
   </body>
 </html>
