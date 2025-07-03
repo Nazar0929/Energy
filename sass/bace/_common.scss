@@ -5,7 +5,9 @@ body {
     font-family: "Montserrat";
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 ::-webkit-scrollbar {
     width: 5px;
