@@ -1260,6 +1260,10 @@ html {
   width: -moz-max-content;
   width: max-content;
   min-width: 220px;
+  transition: background-color 0.4s ease;
+}
+.why__but:hover {
+  background-color: black;
 }
 
 .write {
