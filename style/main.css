@@ -96,14 +96,22 @@ html {
 .header.hide {
   transform: translateY(-101%);
 }
-.header__logo {
-  width: 150px;
+.header__names {
+  font-family: "Montserrat", "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  background: linear-gradient(to right, #ffffff 50%, #ff5000 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 .header__list {
   display: flex;
   align-items: center;
   gap: 45px;
-  margin-left: 130px;
+  margin-left: 90px;
   display: none;
 }
 @media screen and (min-width: 1280px) {
@@ -135,7 +143,7 @@ html {
   margin-left: 60px;
 }
 .header__but {
-  width: 122px;
+  width: 202px;
   font-size: 14px;
   padding: 10px 20px;
   display: block;
@@ -267,7 +275,7 @@ html {
 }
 .hero__title {
   font-weight: 900;
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
   font-size: 28px;
   line-height: 1.6;
@@ -612,8 +620,17 @@ html {
 
 .head {
   background: #1E252B;
-  padding-top: 115px;
-  padding-bottom: 90px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  /* ======================= */
+  /* ГРУПА 1 — ТВІЙ СТИЛЬ (РОЗТЯГНУТА) */
+  /* ======================= */
+  /* ======================= */
+  /* ГРУПА 2 — ЧОРНО-ОРАНЖЕВИЙ */
+  /* ======================= */
+  /* ======================= */
+  /* ГРУПА 3 — СКЛЯНИЙ ГЛОУ */
+  /* ======================= */
 }
 .head__title {
   color: #ff5000;
@@ -716,24 +733,27 @@ html {
     opacity: 1;
   }
 }
-.head .head__item {
+.head .head--group1 .head__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+.head .head--group1 .head__item {
   position: relative;
   display: block;
   padding: 25px 24px;
   width: 100%;
-  max-width: 570px;
   border-radius: 8px;
   font-weight: 700;
   font-size: 12px;
-  margin-top: 24px;
   color: #fff;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
-  z-index: 0;
-  transition: transform 0.15s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* додаємо тінь у трансішіон */
 }
-.head .head__item::after {
+.head .head--group1 .head__item::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -745,37 +765,31 @@ html {
   background-size: contain;
   z-index: 2;
 }
-@media screen and (min-width: 768px) {
-  .head .head__item::after {
-    width: 48px;
-    height: 48px;
-  }
-}
-.head .head__item span.border-helper {
+.head .head--group1 .head__item span.border-helper {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
-.head .head__item span.border-helper::before, .head .head__item span.border-helper::after, .head .head__item span.border-helper > *::before, .head .head__item span.border-helper > *::after {
+.head .head--group1 .head__item span.border-helper::before, .head .head--group1 .head__item span.border-helper::after, .head .head--group1 .head__item span.border-helper > *::before, .head .head--group1 .head__item span.border-helper > *::after {
   content: "";
   position: absolute;
   background-color: #ff5000;
 }
-.head .head__item span.border-helper::before {
+.head .head--group1 .head__item span.border-helper::before {
   top: 0;
   left: 0;
   width: 2px;
   height: 100%;
   animation: borderLoopVertical 2.5s linear infinite 0s;
 }
-.head .head__item span.border-helper::after {
+.head .head--group1 .head__item span.border-helper::after {
   top: 0;
   left: 0;
   height: 2px;
   width: 100%;
   animation: borderLoopHorizontal 2.5s linear infinite 0.625s;
 }
-.head .head__item span.border-helper > span.right-line, .head .head__item span.border-helper > div.right-line {
+.head .head--group1 .head__item span.border-helper > span.right-line, .head .head--group1 .head__item span.border-helper > div.right-line {
   position: absolute;
   top: 0;
   right: 0;
@@ -785,7 +799,7 @@ html {
   animation: borderLoopVertical 2.5s linear infinite 1.25s;
   content: "";
 }
-.head .head__item span.border-helper > span.bottom-line, .head .head__item span.border-helper > div.bottom-line {
+.head .head--group1 .head__item span.border-helper > span.bottom-line, .head .head--group1 .head__item span.border-helper > div.bottom-line {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -795,8 +809,7 @@ html {
   animation: borderLoopHorizontal 2.5s linear infinite 1.875s;
   content: "";
 }
-.head .head__item::before {
-  /* Можно убрать или использовать для дополнительного эффекта */
+.head .head--group1 .head__item::before {
   content: "";
   position: absolute;
   top: 0;
@@ -807,14 +820,82 @@ html {
   opacity: 0.2;
   z-index: 1;
 }
-.head .head__item:active {
+.head .head--group1 .head__item:hover {
+  transform: translateY(-3px); /* піднімаємо блок */
+  box-shadow: 0 4px 20px rgba(255, 80, 0, 0.3); /* легка тінь */
+}
+.head .head--group1 .head__item:active {
   transform: scale(0.95);
 }
 @media screen and (min-width: 768px) {
-  .head .head__item {
-    font-weight: 700;
+  .head .head--group1 .head__item {
     font-size: 14px;
+    font-weight: 700;
   }
+}
+.head .head--group2 .head__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.head .head--group2 .head__item {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 80, 0, 0.45);
+  color: #fff;
+  border-radius: 10px;
+  padding: 28px 26px;
+  transition: 0.25s ease;
+  position: relative;
+}
+.head .head--group2 .head__item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: url(../img/download.png) center no-repeat;
+  background-size: contain;
+  z-index: 2;
+}
+.head .head--group2 .head__item:hover {
+  background: linear-gradient(90deg, #0c0c0c, #1a1a1a);
+  box-shadow: 0 0 20px rgba(255, 80, 0, 0.45);
+  transform: translateY(-3px);
+}
+.head .head--group3 .head__list {
+  display: flex;
+  flex-direction: column;
+}
+.head .head--group3 .head__item {
+  background: rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 30px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: 0.3s ease;
+  color: #fff;
+  position: relative;
+  margin-bottom: 20px; /* відстань між блоками */
+}
+.head .head--group3 .head__item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: url(../img/download.png) center no-repeat;
+  background-size: contain;
+  z-index: 2;
+}
+.head .head--group3 .head__item:hover {
+  border-color: #ff5000;
+  box-shadow: 0 0 25px rgba(255, 80, 0, 0.5);
+  transform: translateY(-4px);
 }
 
 .station {
@@ -1020,7 +1101,7 @@ html {
   }
 }
 .con__title {
-  font-size: 36px;
+  font-size: 43px;
   line-height: 1.1;
   color: #ff5000;
   font-weight: 900;
@@ -1033,9 +1114,13 @@ html {
 .con__text {
   color: white;
   font-weight: 800;
+  font-size: 24px;
   margin-top: 34px;
+  margin-bottom: 7px;
 }
 .con__des {
+  font-size: 18px;
+  font-weight: 700;
   color: white;
   line-height: 1.5;
 }
@@ -1588,7 +1673,7 @@ html {
 .footer__wraps {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 .footer__box {
   width: 200px;
@@ -1601,16 +1686,25 @@ html {
 }
 @media screen and (min-width: 1280px) {
   .footer__box {
-    margin-right: 160px;
+    margin-right: 260px;
   }
 }
-.footer__img {
-  width: 200px;
+.footer__names {
+  font-family: "Montserrat", "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  background: linear-gradient(to right, #ffffff 50%, #ff5000 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 .footer__text {
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
+  margin-top: 25px;
   margin-bottom: 25px;
   display: block;
 }

@@ -1,7 +1,7 @@
 .head {
     background: #1E252B;
-    padding-top: 115px;
-    padding-bottom: 90px;
+    padding-top: 35px;
+    padding-bottom: 35px;
 
 
     &__title {
@@ -110,124 +110,151 @@
     opacity: 1;
   }
 }
+/* ======================= */
+/* ГРУПА 1 — ТВІЙ СТИЛЬ (РОЗТЯГНУТА) */
+/* ======================= */
+.head--group1 .head__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
 
-.head {
-  &__item {
-    position: relative;
-    display: block;
-    padding: 25px 24px;
-    width: 100%;
-    max-width: 570px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 12px;
-    margin-top: 24px;
-    color: #fff;
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    overflow: hidden;
-    z-index: 0;
-     transition: transform 0.15s ease;
+.head--group1 .head__item {
+  position: relative;
+  display: block;
+  padding: 25px 24px;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* додаємо тінь у трансішіон */
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 24px;
-      transform: translateY(-50%);
-      width: 32px;
-      height: 32px;
-      background: url(../img/download.png) center no-repeat;
-      background-size: contain;
-      z-index: 2;
-
-      
-      @media screen and (min-width:768px) {
-      width: 48px;
-      height: 48px;
-      }
-      
-    }
-
-    span.border-helper {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-
-      // создаём 4 псевдоэлемента для каждой стороны рамки
-      &::before, &::after, 
-      /* два дополнительных через вложенность */
-      & > *::before, & > *::after {
-        content: '';
-        position: absolute;
-        background-color: #ff5000;
-      }
-
-      // Левая вертикальная линия
-      &::before {
-        top: 0;
-        left: 0;
-        width: 2px;
-        height: 100%;
-        animation: borderLoopVertical 2.5s linear infinite 0s;
-      }
-
-      // Верхняя горизонтальная линия
-      &::after {
-        top: 0;
-        left: 0;
-        height: 2px;
-        width: 100%;
-        animation: borderLoopHorizontal 2.5s linear infinite 0.625s;
-      }
-
-      // Правая вертикальная линия (через вложенный span — но у тебя нет вложенных элементов, поэтому сделаем через дополнительный псевдоэлемент)
-      & > span.right-line,
-      & > div.right-line {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 2px;
-        height: 100%;
-        background-color: #ff5000;
-        animation: borderLoopVertical 2.5s linear infinite 1.25s;
-        content: '';
-      }
-
-      // Нижняя горизонтальная линия (через дополнительный элемент)
-      & > span.bottom-line,
-      & > div.bottom-line {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2px;
-        width: 100%;
-        background-color: #ff5000;
-        animation: borderLoopHorizontal 2.5s linear infinite 1.875s;
-        content: '';
-      }
-    }
-
-    &::before {
-      /* Можно убрать или использовать для дополнительного эффекта */
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 2px;
-      width: 100%;
-      background-color: #ff5000;
-      opacity: 0.2;
-      z-index: 1;
-    }
-      &:active {
-    transform: scale(0.95);
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: url(../img/download.png) center no-repeat;
+    background-size: contain;
+    z-index: 2;
   }
 
-      @media screen and (min-width:768px) {
-    font-weight: 700;
-    font-size: 14px;
-      }
+  span.border-helper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    &::before, &::after, 
+    & > *::before, & > *::after {
+      content: '';
+      position: absolute;
+      background-color: #ff5000;
+    }
+
+    &::before { top: 0; left: 0; width: 2px; height: 100%; animation: borderLoopVertical 2.5s linear infinite 0s; }
+    &::after  { top: 0; left: 0; height: 2px; width: 100%; animation: borderLoopHorizontal 2.5s linear infinite 0.625s; }
+
+    & > span.right-line,
+    & > div.right-line { position: absolute; top: 0; right: 0; width: 2px; height: 100%; background-color: #ff5000; animation: borderLoopVertical 2.5s linear infinite 1.25s; content: ''; }
+
+    & > span.bottom-line,
+    & > div.bottom-line { position: absolute; bottom: 0; left: 0; height: 2px; width: 100%; background-color: #ff5000; animation: borderLoopHorizontal 2.5s linear infinite 1.875s; content: ''; }
+  }
+
+  &::before { content: ''; position: absolute; top: 0; left: 0; height: 2px; width: 100%; background-color: #ff5000; opacity: 0.2; z-index: 1; }
+
+  &:hover {
+    transform: translateY(-3px); /* піднімаємо блок */
+    box-shadow: 0 4px 20px rgba(255, 80, 0, 0.3); /* легка тінь */
+  }
+
+  &:active { transform: scale(0.95); }
+
+  @media screen and (min-width:768px) { font-size: 14px; font-weight: 700; }
+}
+
+/* ======================= */
+/* ГРУПА 2 — ЧОРНО-ОРАНЖЕВИЙ */
+/* ======================= */
+.head--group2 .head__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.head--group2 .head__item {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 80, 0, 0.45);
+  color: #fff;
+  border-radius: 10px;
+  padding: 28px 26px;
+  transition: 0.25s ease;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: url(../img/download.png) center no-repeat;
+    background-size: contain;
+    z-index: 2;
+  }
+
+  &:hover {
+    background: linear-gradient(90deg, #0c0c0c, #1a1a1a);
+    box-shadow: 0 0 20px rgba(255, 80, 0, 0.45);
+    transform: translateY(-3px);
+  }
+}
+
+/* ======================= */
+/* ГРУПА 3 — СКЛЯНИЙ ГЛОУ */
+/* ======================= */
+.head--group3 .head__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.head--group3 .head__item {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 30px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: 0.3s ease;
+  color: #fff;
+  position: relative;
+  margin-bottom: 20px; /* відстань між блоками */
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: url(../img/download.png) center no-repeat;
+    background-size: contain;
+    z-index: 2;
+  }
+
+  &:hover {
+    border-color: #ff5000;
+    box-shadow: 0 0 25px rgba(255, 80, 0, 0.5);
+    transform: translateY(-4px);
   }
 }
 
