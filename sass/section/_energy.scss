@@ -42,7 +42,7 @@
 
 &__list {
     display: flex;
-    align-items: center;
+align-items: center;
     gap: 20px;
     justify-content: center;
     margin-bottom: 30px;
@@ -50,9 +50,53 @@
 
         @media screen and (min-width:1280px) {
             margin-bottom: 0px;
+            align-items: start;
             justify-content: flex-start;
       }
 }
+.station--group3 .station__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* менші проміжки */
+}
+
+.station--group3 .station__item {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 26px 60px 26px 28px; /* збільшив правий відступ */
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: 0.3s ease;
+  color: #fff;
+  position: relative;
+  width:  100%; /* однакова висота */
+  display: flex; 
+  align-items: center; 
+
+          @media screen and (min-width:1280px) {
+  width:  500px; /* однакова висота */
+      }
+}
+
+.station--group3 .station__item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: url(../img/download.png) center no-repeat;
+  background-size: contain;
+  z-index: 2;
+}
+
+.station--group3 .station__item:hover {
+  border-color: #ff5000;
+  box-shadow: 0 0 25px rgba(255, 80, 0, 0.5);
+  transform: translateY(-4px);
+}
+
 
 &__button {
     display: block;

@@ -60,6 +60,15 @@
         margin-left: 155px;
       }
     }
+    &__fr {
+        width: 300px;
+                @media screen and (min-width:780px) {
+ width: 500px;
+      }
+                      @media screen and (min-width:1280px) {
+ width: 700px;
+      }
+    }
 
     &__imgs {
         width: 40px;

@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="../style/main.min.css" />
 </head>
 <body>
-<div class="top-header container">
+     <div class="top-header container">
   <div class="contact-group">
 
     <div class="contact-item">
@@ -80,7 +80,7 @@
     </a>
   </div>
 </div>
-</div>
+
     <header class="header">
       <div class="container header__box">
         <div>
@@ -110,14 +110,16 @@
             <button type="button" class="menu__btn" data-modal-header-close>
               <img src="../img/iconsclose.png" alt="" class="header__close">
             </button>
-            <a href="../index.html" class="header__names">ЛН ЕНЕРДЖИ</a>
+              <a href="./index.html"
+            ><img src="./img/libim.jpg" alt="" class="header__logos"
+          /></a>
           
             <ul>
-              <li class="header__href"><a href="../index.html" class="header__hre">Головна</a></li>
-              <li class="header__href"><a href="../index.html#energy" class="header__hre">Електроенергія</a></li>
-              <!-- <li class="header__href"><a href="./index.html#services" class="header__hre">Послуги</a></li> -->
-              <li class="header__href"><a href="../index.html#document" class="header__hre">Нормативно-правові акти</a></li>
-              <li class="header__href"><a href="../pages/contact.html" class="header__hre">Контакти</a></li>
+              <li class="header__href"><a href="./pages/about.html" class="header__hre">Про нас</a></li>
+              <li class="header__href"><a href="./index.html#document" class="header__hre">Продукція</a></li>
+              <li class="header__href"><a href="./index.html#services" class="header__hre">Послуги</a></li>
+              <li class="header__href"><a href="./index.html#energy" class="header__hre">Доставка Електроенергії</a></li>
+              <li class="header__href"><a href="./pages/contact.html" class="header__hre">Контакти</a></li>
             </ul>
             <div class="header__boxwrap">
           <ul class="header__lists ">
@@ -131,32 +133,56 @@
 
           </div>
     </header>
+<section class="login">
+  <div class="container">
 
+    <div class="login__top">
+      Увійти
+    </div>
 
-    <section class="con">
-        <div class="container">
-            <div class="con__box">
-            <div>
-            <h1 class="con__title">Контакти <img src="../img/phoneren.png" alt="" class="con__imgs"></h1>
-          
-            <p class="con__des">ТОВ “ЛН ЕНЕРДЖИ”</p>
-            <p class="con__text">Юридична адреса:</p>
-            <p class="con__des">01104, м. Київ., вул. Бастіонна, буд. 12, офіс 12/1</p>
-            <p class="con__des">Email: <a href="mailto:lnenergy91@gmail.com " class="con__link">lnenergy91@gmail.com </a></p>
-            <p class="con__des">тел: <a href="tel:++380965384251" class="con__link">+380965384251</a></p>
-            <p class="con__text">Графік роботи::</p>
-            <p class="con__des">понеділок-п’ятниця з 9:00 до 18:00</p>
-            <p class="con__des">Сб, Нд - вихідний</p>
-        
-            </div>
-            <div class="con__frame">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d427.1245988519866!2d30.548796788150103!3d50.418025844906666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cfa6b13fdf2b%3A0xf82d127a5f2b9c3!2z0KPQutGA0L_QvtGI0YLQsCAwMTEwNA!5e1!3m2!1sru!2sua!4v1765057545734!5m2!1sru!2sua" width="600" class="con__fr" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            </div>
+    <div class="login__bottom">
+      <span class="login__brand">ЛН ЕНЕРДЖИ</span>
+
+      <button class="login__btn">
+        Увійти
+        <span class="login__arrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M10 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+
+  </div>
+</section>
+<section class="forma">
+<div class="login-wrapper">
+    <form class="login-form">
+        <h2>Увійти</h2>
+
+        <label for="username">Ім'я користувача або Email адреса</label>
+        <input type="text" id="username" />
+
+        <label for="password">Пароль</label>
+        <input type="password" id="password" />
+
+        <div class="remember-block">
+            <input type="checkbox" id="remember" />
+            <label for="remember">Запам'ятати мене</label>
         </div>
-    </section>
 
-<footer class="footer">
+        <button type="submit" class="login-btn">Увійти</button>
+
+        <div class="links">
+            <a href="#">Зареєструватись</a>
+            <a href="#">Втратили свій пароль?</a>
+        </div>
+    </form>
+</div>
+
+</section>
+
+     <footer class="footer">
       <div class="container">
         <div class="footer__wraps">
           <div  class="footer__bog">
@@ -185,49 +211,5 @@
         </div>
       </div>
     </footer>
-            <div class="backdrop is-hidden"  data-modal>
-        <div class="backdrop__modal ">
-          <h2 class="backdrop__title">Залиште свої дані, ми вам передзвонимо</h2>
-          <form  action="https://api.web3forms.com/submit" method="POST" class="backdrop__form">
-
-            <input type="hidden" name="access_key" value="ce1201de-7164-4780-86de-73433d9e954b" class="">
-            <label for="name" class="backdrop__label">Ім'я</label>
-            <div class="backdrop__wrapper">
-            <input type="text" id="name" class="backdrop__input" required>
-            <img src="../img/icons90.png" alt="" class="backdrop__icon">
-
-          </div>
-            <label for="tell" class="backdrop__label">Телефон</label>
-            <div class="backdrop__wrapper">
-            <input type="text" id="tell" class="backdrop__input" required>
-            <img src="../img/iconsphones.png" alt="" class="backdrop__icon">
-
-            </div>
-            <label for="email" class="backdrop__label">Пошта</label>
-            <div class="backdrop__wrapper">
-            <input type="email" id="emaill" class="backdrop__input" required>
-            <img src="../img/iconsmails.png" alt="" class="backdrop__icon">
-
-            </div>
-            <label for="text" class="backdrop__comment">Коментар</label>
-            <textarea name="text" id="text" placeholder="Введіть текст" class="backdrop__text"></textarea>
-            <label class="backdrop__wrapperr">
-              <input type="checkbox"  class="backdrop__box" required>
-              <span class="backdrop__checked">Погоджуюся з розсилкою та приймаю</span>
-              <a href="https://www.facebook.com/"  target="_blank" class="backdrop__links">Умови договору</a>
-            </label>
-            <div class="ds">
-            <button type="submit" class="backdrop__button">Відправити</button>
-            </div>
-          </form>
-          <button type="button" class="backdrop__closee" data-modal-close>
-            <img src="../img/iconsclose.png" alt="" class="backdrop__close">
-          </button>
-        </div>
-      </div>
-
-      <script src="../js/back.js"></script>
-      <script src="../js/scrol.js"></script>
-    
 </body>
 </html>
