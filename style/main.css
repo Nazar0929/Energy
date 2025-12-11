@@ -1422,7 +1422,7 @@ html {
   color: #c9d1d9;
   font-size: 16px;
 }
-.login-form input[type=text],
+.login-form input[type=email],
 .login-form input[type=password] {
   width: 100%;
   padding: 14px;
@@ -1432,7 +1432,7 @@ html {
   color: #fff;
   font-size: 16px;
 }
-.login-form input[type=text]:focus,
+.login-form input[type=email]:focus,
 .login-form input[type=password]:focus {
   border-color: #4aa3ff;
   outline: none;
